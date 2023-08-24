@@ -7,12 +7,25 @@
 
 import UIKit
 
-class todoCheckViewControllerTableViewController: UITableViewController {
-    @IBAction func toEditButton(_ sender: UIBarButtonItem) {
+struct Task {
+    var title: String
+    var done: Bool
+}
+
+class todoCheckViewController: UIViewController {
+    var tasks = [Task]()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
     }
-    @IBAction func toAddButton(_ sender: UIBarButtonItem) {
+    
+    @IBAction func addButton(_ sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "할 일 추가", message: nil, preferredStyle: .alert)
-        let registerButton = UIAlertAction(title: "추가", style: .default, handler: { _ in alert.textFields?[0].text
+        let registerButton = UIAlertAction(title: "추가", style: .default, handler: { [weak self] _ in
+            guard let title = alert.textFields?[0].text else { return }
+            let task = Task(title: title, done: false)
+            self?.tasks.append(task)
             })
         let cancelButton = UIAlertAction(title: "취소", style: .cancel, handler: nil)
         alert.addAction(cancelButton)
@@ -21,23 +34,8 @@ class todoCheckViewControllerTableViewController: UITableViewController {
         })
         self.present(alert, animated: true, completion: nil)
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    @IBAction func editButton(_ sender: UIBarButtonItem) {
         
-    }
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
     }
     
 }

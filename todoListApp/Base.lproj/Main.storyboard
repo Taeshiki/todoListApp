@@ -22,7 +22,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="할일 확인하기"/>
                                 <connections>
-                                    <segue destination="cvD-7d-mjX" kind="show" id="Kdw-qs-cw3"/>
+                                    <segue destination="m7h-Gk-8nh" kind="show" id="8ZB-EU-fuk"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eUd-oP-Hhb">
@@ -48,47 +48,56 @@
             </objects>
             <point key="canvasLocation" x="-1002.2900763358779" y="-330.28169014084511"/>
         </scene>
-        <!--Todo Check View Controller Table View Controller-->
-        <scene sceneID="qxy-ul-jS1">
+        <!--Todo Check View Controller-->
+        <scene sceneID="UfE-Hw-dxC">
             <objects>
-                <tableViewController id="cvD-7d-mjX" customClass="todoCheckViewControllerTableViewController" customModule="todoListApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="CNr-6H-xd8">
+                <viewController id="m7h-Gk-8nh" customClass="todoCheckViewController" customModule="todoListApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FEZ-IC-htw">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0Q3-2y-Zme">
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="p16-WL-meb">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="p16-WL-meb" id="0QZ-6H-gI0">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Gdd-yW-X2q"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="49I-Tg-WoE">
-                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="49I-Tg-WoE" id="ems-nv-l9c">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="cvD-7d-mjX" id="Uh0-WT-GGy"/>
-                            <outlet property="delegate" destination="cvD-7d-mjX" id="O80-ej-OBT"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="FNn-WV-PGv">
-                        <rightBarButtonItems>
-                            <barButtonItem style="plain" systemItem="add" id="srl-f3-qm6">
-                                <connections>
-                                    <action selector="toAddButton:" destination="cvD-7d-mjX" id="z71-ss-pxy"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem style="plain" systemItem="edit" id="Xxg-Wz-I14">
-                                <connections>
-                                    <action selector="toEditButton:" destination="cvD-7d-mjX" id="QEF-jc-efZ"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <constraints>
+                            <constraint firstItem="Gdd-yW-X2q" firstAttribute="bottom" secondItem="0Q3-2y-Zme" secondAttribute="bottom" id="3Qf-x1-w33"/>
+                            <constraint firstItem="Gdd-yW-X2q" firstAttribute="trailing" secondItem="0Q3-2y-Zme" secondAttribute="trailing" id="XI6-8D-thR"/>
+                            <constraint firstItem="0Q3-2y-Zme" firstAttribute="leading" secondItem="Gdd-yW-X2q" secondAttribute="leading" id="snL-BQ-whY"/>
+                            <constraint firstItem="0Q3-2y-Zme" firstAttribute="top" secondItem="Gdd-yW-X2q" secondAttribute="top" id="stl-TU-lcJ"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="cul-5e-JQf">
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="CrZ-8p-gVm">
+                            <connections>
+                                <action selector="editButton:" destination="m7h-Gk-8nh" id="UrU-5D-9Mc"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="hdh-pZ-dg0">
+                            <connections>
+                                <action selector="addButton:" destination="m7h-Gk-8nh" id="gnD-yY-AdF"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HZU-6R-9zV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HFH-Pl-rhY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-144" y="-330"/>
+            <point key="canvasLocation" x="-85" y="-330"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Zro-iC-vDc">
