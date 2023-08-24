@@ -60,7 +60,7 @@
                                 <rect key="frame" x="0.0" y="103" width="393" height="666"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="p16-WL-meb">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="p16-WL-meb">
                                         <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="p16-WL-meb" id="0QZ-6H-gI0">
@@ -84,16 +84,20 @@
                     <navigationItem key="navigationItem" id="cul-5e-JQf">
                         <barButtonItem key="leftBarButtonItem" systemItem="edit" id="CrZ-8p-gVm">
                             <connections>
-                                <action selector="editButton:" destination="m7h-Gk-8nh" id="UrU-5D-9Mc"/>
+                                <action selector="editButtonPush:" destination="m7h-Gk-8nh" id="UrU-5D-9Mc"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="hdh-pZ-dg0">
                             <connections>
-                                <action selector="addButton:" destination="m7h-Gk-8nh" id="gnD-yY-AdF"/>
+                                <action selector="addButtonPush:" destination="m7h-Gk-8nh" id="gnD-yY-AdF"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="editButton" destination="CrZ-8p-gVm" id="KnL-JX-eFl"/>
+                        <outlet property="tableView" destination="0Q3-2y-Zme" id="gQM-gR-zap"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HFH-Pl-rhY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
